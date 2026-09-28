@@ -2,10 +2,9 @@
 
 Proyecto del **primer parcial** de *Desarrollo de Aplicaciones Web y Sistemas Operativos* (193308), Universidad Francisco de Paula Santander Ocaña.
 
-**Estudiante:** [ESCRIBE AQUÍ TU NOMBRE COMPLETO] (código [ESCRIBE AQUÍ TU CÓDIGO])
+**Estudiante:** Samuel martinez batona 0192703
 **Docente:** José Barbosa
 
-> **Aviso:** es un proyecto académico ficticio. No representa una tienda real ni se realizan ventas. Toda adquisición de armas reales exige documentación y permisos según la normativa colombiana vigente.
 
 ## Descripción
 
@@ -38,20 +37,6 @@ Catálogo de una armería deportiva y de colección con diseño oscuro y minimal
 └── assets/
     └── img/                     Ilustraciones SVG de los productos
 ```
-
-## Cómo ejecutarlo
-
-Requiere **Node.js 18 o superior**. En Nobara Linux (basada en Fedora):
-
-```bash
-sudo dnf install nodejs npm    # solo si aún no lo tienes
-npm install
-npm run dev
-```
-
-Abre la dirección que muestra la terminal (normalmente `http://localhost:5173`).
-
-Para generar la versión de producción: `npm run build`.
 
 ## El componente `TarjetaProducto`
 
