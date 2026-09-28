@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Revólver Mesa 38">
+<defs>
+<radialGradient id="mesa38-bg" cx="50%" cy="46%" r="70%"><stop offset="0" stop-color="#2d3136"/><stop offset="1" stop-color="#121315"/></radialGradient>
+<linearGradient id="mesa38-acero" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a3abb2"/><stop offset=".35" stop-color="#666d74"/><stop offset=".75" stop-color="#3a3f45"/><stop offset="1" stop-color="#2a2e33"/></linearGradient>
+<linearGradient id="mesa38-pavon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#565d65"/><stop offset=".4" stop-color="#2e3338"/><stop offset="1" stop-color="#1b1e22"/></linearGradient>
+<linearGradient id="mesa38-madera" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6240"/><stop offset=".55" stop-color="#5e3f27"/><stop offset="1" stop-color="#3b2717"/></linearGradient>
+<linearGradient id="mesa38-polimero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3e44"/><stop offset="1" stop-color="#1a1c1f"/></linearGradient>
+<linearGradient id="mesa38-laton" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2c88c"/><stop offset="1" stop-color="#9a7a3f"/></linearGradient>
+<linearGradient id="mesa38-cristal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0c4"/><stop offset="1" stop-color="#22343f"/></linearGradient>
+<pattern id="mesa38-veta" width="40" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)"><path d="M0 4 Q10 0 20 4 T40 4 M0 11 Q10 7 20 11 T40 11" stroke="#20120a" stroke-opacity=".35" fill="none" stroke-width="1.2"/></pattern>
+<pattern id="mesa38-agarre" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.3" fill="#000" fill-opacity=".45"/></pattern>
+<filter id="mesa38-sombra" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".55"/></filter>
+</defs>
+<rect width="800" height="800" fill="url(#mesa38-bg)"/>
+<ellipse cx="400" cy="640" rx="290" ry="26" fill="#000" opacity=".35"/>
+<circle cx="400" cy="400" r="318" fill="none" stroke="#b8965a" stroke-opacity=".16" stroke-width="1.5"/>
+<g transform="translate(400 400) rotate(-3) scale(1.0) translate(-400 -400)" filter="url(#mesa38-sombra)">
+
+<g stroke-linejoin="round">
+  <path d="M256 404 Q226 446 232 522 Q238 590 302 606 Q350 612 360 572 Q350 500 350 404 Z" fill="url(#mesa38-madera)"/>
+  <path d="M256 404 Q226 446 232 522 Q238 590 302 606 Q350 612 360 572 Q350 500 350 404 Z" fill="url(#mesa38-veta)"/>
+  <path d="M352 404 Q366 476 428 470 Q456 466 460 406" fill="none" stroke="#3a4046" stroke-width="14" stroke-linecap="round"/>
+  <path d="M400 404 Q408 440 418 446" fill="none" stroke="#8b939a" stroke-width="8" stroke-linecap="round"/>
+  <rect x="452" y="322" width="250" height="44" rx="8" fill="url(#mesa38-pavon)"/>
+  <path d="M462 328 H694" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/>
+  <rect x="476" y="374" width="170" height="14" rx="7" fill="url(#mesa38-acero)"/>
+  <rect x="676" y="306" width="18" height="18" rx="4" fill="#25282c"/>
+  <path d="M248 320 Q248 296 276 296 H352 V408 H276 Q248 408 248 384 Z" fill="url(#mesa38-acero)"/>
+  <path d="M262 302 H346" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/>
+  <rect x="352" y="304" width="112" height="98" rx="16" fill="url(#mesa38-pavon)"/>
+  <path d="M366 310 H450" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/>
+  <rect x="372" y="318" width="8" height="62" rx="4" fill="#15181b" opacity=".75"/><rect x="402" y="318" width="8" height="62" rx="4" fill="#15181b" opacity=".75"/><rect x="432" y="318" width="8" height="62" rx="4" fill="#15181b" opacity=".75"/>
+  <path d="M226 322 L258 286 L286 304 L262 334 Z" fill="url(#mesa38-pavon)"/>
+  <circle cx="300" cy="352" r="8" fill="url(#mesa38-laton)"/>
+  <circle cx="330" cy="392" r="6" fill="url(#mesa38-laton)"/>
+</g>
+</g>
+</svg>

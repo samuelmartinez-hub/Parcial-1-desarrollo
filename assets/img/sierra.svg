@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Rifle de cerrojo Sierra">
+<defs>
+<radialGradient id="sierra-bg" cx="50%" cy="46%" r="70%"><stop offset="0" stop-color="#2d3136"/><stop offset="1" stop-color="#121315"/></radialGradient>
+<linearGradient id="sierra-acero" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a3abb2"/><stop offset=".35" stop-color="#666d74"/><stop offset=".75" stop-color="#3a3f45"/><stop offset="1" stop-color="#2a2e33"/></linearGradient>
+<linearGradient id="sierra-pavon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#565d65"/><stop offset=".4" stop-color="#2e3338"/><stop offset="1" stop-color="#1b1e22"/></linearGradient>
+<linearGradient id="sierra-madera" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6240"/><stop offset=".55" stop-color="#5e3f27"/><stop offset="1" stop-color="#3b2717"/></linearGradient>
+<linearGradient id="sierra-polimero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3e44"/><stop offset="1" stop-color="#1a1c1f"/></linearGradient>
+<linearGradient id="sierra-laton" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2c88c"/><stop offset="1" stop-color="#9a7a3f"/></linearGradient>
+<linearGradient id="sierra-cristal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0c4"/><stop offset="1" stop-color="#22343f"/></linearGradient>
+<pattern id="sierra-veta" width="40" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)"><path d="M0 4 Q10 0 20 4 T40 4 M0 11 Q10 7 20 11 T40 11" stroke="#20120a" stroke-opacity=".35" fill="none" stroke-width="1.2"/></pattern>
+<pattern id="sierra-agarre" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.3" fill="#000" fill-opacity=".45"/></pattern>
+<filter id="sierra-sombra" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".55"/></filter>
+</defs>
+<rect width="800" height="800" fill="url(#sierra-bg)"/>
+<ellipse cx="400" cy="640" rx="290" ry="26" fill="#000" opacity=".35"/>
+<circle cx="400" cy="400" r="318" fill="none" stroke="#b8965a" stroke-opacity=".16" stroke-width="1.5"/>
+<g transform="translate(400 400) rotate(-5) scale(1.0) translate(-400 -400)" filter="url(#sierra-sombra)">
+<g stroke-linejoin="round">
+  <path d="M70 338 L252 364 L342 370 L342 424 L322 424 L302 486 L262 486 L262 448 L152 474 L94 496 Q70 496 70 474 Z" fill="url(#sierra-madera)"/>
+  <path d="M70 338 L252 364 L342 370 L342 424 L322 424 L302 486 L262 486 L262 448 L152 474 L94 496 Q70 496 70 474 Z" fill="url(#sierra-veta)"/>
+  <rect x="66" y="336" width="14" height="160" rx="5" fill="#15171a"/>
+  <path d="M340 392 L624 386 L624 420 L346 434 Z" fill="url(#sierra-madera)"/>
+  <path d="M340 392 L624 386 L624 420 L346 434 Z" fill="url(#sierra-veta)"/>
+  <rect x="330" y="346" width="150" height="62" rx="8" fill="url(#sierra-pavon)"/>
+  <path d="M344 352 H468" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/>
+  <rect x="478" y="364" width="262" height="20" rx="6" fill="url(#sierra-acero)"/>
+  <rect x="730" y="360" width="14" height="28" rx="4" fill="#15171a"/>
+  <path d="M424 384 L452 430" stroke="url(#sierra-acero)" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="454" cy="434" r="10" fill="url(#sierra-acero)"/>
+  <path d="M398 408 Q402 456 446 456 Q478 456 480 412" fill="none" stroke="#2c3136" stroke-width="10" stroke-linecap="round"/>
+  <rect x="390" y="404" width="46" height="20" rx="5" fill="#1b1e22"/>
+  <rect x="352" y="296" width="230" height="40" rx="18" fill="#121417"/>
+  <rect x="352" y="296" width="230" height="40" rx="18" fill="none" stroke="#fff" stroke-opacity=".18"/>
+  <rect x="338" y="288" width="34" height="56" rx="10" fill="#0d0f11"/>
+  <rect x="562" y="292" width="34" height="48" rx="10" fill="#0d0f11"/>
+  <ellipse cx="582" cy="316" rx="8" ry="14" fill="url(#sierra-cristal)"/>
+  <rect x="384" y="336" width="18" height="16" rx="3" fill="#25282c"/>
+  <rect x="520" y="336" width="18" height="30" rx="3" fill="#25282c"/>
+  <circle cx="470" cy="312" r="7" fill="url(#sierra-laton)"/></g>
+</g>
+</svg>

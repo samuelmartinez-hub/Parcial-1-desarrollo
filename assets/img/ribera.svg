@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="Escopeta de corredera Ribera">
+<defs>
+<radialGradient id="ribera-bg" cx="50%" cy="46%" r="70%"><stop offset="0" stop-color="#2d3136"/><stop offset="1" stop-color="#121315"/></radialGradient>
+<linearGradient id="ribera-acero" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a3abb2"/><stop offset=".35" stop-color="#666d74"/><stop offset=".75" stop-color="#3a3f45"/><stop offset="1" stop-color="#2a2e33"/></linearGradient>
+<linearGradient id="ribera-pavon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#565d65"/><stop offset=".4" stop-color="#2e3338"/><stop offset="1" stop-color="#1b1e22"/></linearGradient>
+<linearGradient id="ribera-madera" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6240"/><stop offset=".55" stop-color="#5e3f27"/><stop offset="1" stop-color="#3b2717"/></linearGradient>
+<linearGradient id="ribera-polimero" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3e44"/><stop offset="1" stop-color="#1a1c1f"/></linearGradient>
+<linearGradient id="ribera-laton" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2c88c"/><stop offset="1" stop-color="#9a7a3f"/></linearGradient>
+<linearGradient id="ribera-cristal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fb0c4"/><stop offset="1" stop-color="#22343f"/></linearGradient>
+<pattern id="ribera-veta" width="40" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-6)"><path d="M0 4 Q10 0 20 4 T40 4 M0 11 Q10 7 20 11 T40 11" stroke="#20120a" stroke-opacity=".35" fill="none" stroke-width="1.2"/></pattern>
+<pattern id="ribera-agarre" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.3" fill="#000" fill-opacity=".45"/></pattern>
+<filter id="ribera-sombra" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".55"/></filter>
+</defs>
+<rect width="800" height="800" fill="url(#ribera-bg)"/>
+<ellipse cx="400" cy="640" rx="290" ry="26" fill="#000" opacity=".35"/>
+<circle cx="400" cy="400" r="318" fill="none" stroke="#b8965a" stroke-opacity=".16" stroke-width="1.5"/>
+<g transform="translate(400 400) rotate(-5) scale(1.0) translate(-400 -400)" filter="url(#ribera-sombra)">
+<g stroke-linejoin="round">
+  <path d="M80 344 L236 368 L300 372 L300 420 L284 420 L268 482 L232 482 L232 446 L150 468 L104 490 Q80 490 80 470 Z" fill="url(#ribera-madera)"/>
+  <path d="M80 344 L236 368 L300 372 L300 420 L284 420 L268 482 L232 482 L232 446 L150 468 L104 490 Q80 490 80 470 Z" fill="url(#ribera-veta)"/>
+  <rect x="76" y="342" width="14" height="150" rx="5" fill="#15171a"/>
+  <rect x="300" y="346" width="150" height="72" rx="10" fill="url(#ribera-pavon)"/>
+  <path d="M314 352 H436" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="2" stroke-linecap="round"/>
+  <rect x="448" y="352" width="292" height="22" rx="7" fill="url(#ribera-acero)"/>
+  <rect x="448" y="380" width="200" height="18" rx="8" fill="url(#ribera-acero)"/>
+  <rect x="482" y="372" width="120" height="44" rx="14" fill="url(#ribera-madera)"/>
+  <rect x="482" y="372" width="120" height="44" rx="14" fill="url(#ribera-veta)"/>
+  <rect x="486" y="378" width="4" height="30" rx="2" fill="#000" opacity=".4"/><rect x="498" y="378" width="4" height="30" rx="2" fill="#000" opacity=".4"/><rect x="510" y="378" width="4" height="30" rx="2" fill="#000" opacity=".4"/><rect x="522" y="378" width="4" height="30" rx="2" fill="#000" opacity=".4"/><rect x="534" y="378" width="4" height="30" rx="2" fill="#000" opacity=".4"/><rect x="546" y="378" width="4" height="30" rx="2" fill="#000" opacity=".4"/><rect x="558" y="378" width="4" height="30" rx="2" fill="#000" opacity=".4"/><rect x="570" y="378" width="4" height="30" rx="2" fill="#000" opacity=".4"/>
+  <circle cx="736" cy="346" r="6" fill="url(#ribera-laton)"/>
+  <rect x="640" y="380" width="14" height="18" rx="4" fill="#25282c"/>
+  <path d="M352 418 Q356 460 398 460 Q430 460 432 422" fill="none" stroke="#2c3136" stroke-width="10" stroke-linecap="round"/>
+  <path d="M388 420 Q392 440 400 446" fill="none" stroke="#8b939a" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="338" cy="382" r="6" fill="url(#ribera-laton)"/></g>
+</g>
+</svg>
