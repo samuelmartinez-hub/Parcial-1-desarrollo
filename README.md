@@ -1,4 +1,4 @@
-# Armería Sierra Norte: catálogo con React
+# Armería Sierra Norte: catálogo con Web Component nativo
 
 Proyecto del **primer parcial** de *Desarrollo de Aplicaciones Web y Sistemas Operativos* (193308), Universidad Francisco de Paula Santander Ocaña.
 
@@ -9,134 +9,96 @@ Proyecto del **primer parcial** de *Desarrollo de Aplicaciones Web y Sistemas Op
 
 ## Descripción
 
-Catálogo de una armería deportiva y de colección con diseño oscuro y minimalista. Sirve para demostrar la **componentización** con React y Vite: una tarjeta de producto (`TarjetaProducto`) reutilizable que recibe datos por props y avisa a la página mediante eventos.
+Catálogo de una armería deportiva y de colección, con diseño oscuro y minimalista. Sirve para demostrar la **componentización**: una tarjeta de producto (`<tarjeta-producto>`) construida como **Web Component nativo** (HTML + CSS + JavaScript, sin frameworks ni pasos de compilación) y reutilizada seis veces con datos distintos.
 
 ## Estructura del proyecto
 
 ```
 .
 ├── index.html
-├── package.json
-├── vite.config.js
 ├── README.md
 ├── css/
-│   ├── base.css                 Variables, tipografía y botones
-│   ├── layout.css               Encabezado, hero, catálogo, pedido y diálogo
-│   └── tarjeta-producto.css     Estilos del componente
+│   └── styles.css
 ├── js/
-│   ├── main.jsx                 Punto de entrada
-│   ├── App.jsx                  Estado del pedido, filtro y eventos
-│   ├── utils.js                 Formato de precio y rutas de imágenes
-│   ├── data/
-│   │   └── productos.js         Catálogo (6 productos)
-│   └── components/
-│       ├── TarjetaProducto.jsx  Componente principal del taller
-│       ├── Encabezado.jsx
-│       ├── FiltroCategorias.jsx
-│       ├── PanelPedido.jsx
-│       └── FichaTecnica.jsx
+│   ├── tarjeta-producto.js   Web Component
+│   └── main.js               Filtro, pedido y ficha técnica
 └── assets/
-    └── img/                     Ilustraciones SVG de los productos
+    └── img/                  Ilustraciones SVG de los productos
 ```
 
-## Cómo ejecutarlo
+## Cómo ejecutarlo en tu equipo
 
-Requiere **Node.js 18 o superior**. En Nobara Linux (basada en Fedora):
+No requiere instalar Node, npm ni ninguna dependencia.
 
-```bash
-sudo dnf install nodejs npm    # solo si aún no lo tienes
-npm install
-npm run dev
-```
+1. Abre la carpeta del proyecto en **Visual Studio Code**.
+2. Con la extensión **Live Server**, haz clic derecho sobre `index.html` y elige
+   *Open with Live Server*.
 
-Abre la dirección que muestra la terminal (normalmente `http://localhost:5173`).
+Eso es todo: el navegador carga la página directamente.
 
-Para generar la versión de producción: `npm run build`.
+## Cómo publicarlo en GitHub Pages
 
-## Publicar en GitHub Pages
+Como es HTML, CSS y JavaScript sin ningún paso de compilación, publicarlo es
+igual de simple:
 
-GitHub Pages solo sirve archivos tal cual están, sin procesarlos. Este proyecto usa JSX,
-que el navegador no entiende directamente, así que **nunca se sube el código fuente**:
-hay que compilarlo con Vite (`npm run build`) y publicar solo la carpeta `dist/`
-que ese comando genera.
+1. Sube el proyecto a un repositorio de GitHub (`git add`, `git commit`, `git push`).
+2. En el repositorio, ve a **Settings → Pages**.
+3. En *Build and deployment → Source* elige **Deploy from a branch**.
+4. En *Branch* selecciona **main** (o la rama donde subiste el código) y la
+   carpeta **/(root)**. Guarda.
+5. Espera uno o dos minutos y entra a `https://tu-usuario.github.io/nombre-del-repositorio/`.
 
-1. **Ajusta `vite.config.js`.** El campo `base` debe ser `/nombre-exacto-del-repositorio/`.
-   Por ejemplo, si tu repositorio en GitHub es
-   `https://github.com/tu-usuario/armeria-sierra-norte`, entonces:
+No hay que tocar ningún archivo de configuración ni ejecutar ningún comando de
+compilación: lo que subes es exactamente lo que se publica.
 
-   ```js
-   base: '/armeria-sierra-norte/',
-   ```
+## El componente `<tarjeta-producto>`
 
-   Si el nombre de tu repositorio es distinto, cambia este valor exactamente por ese nombre
-   (con las diagonales al inicio y al final). Si el repositorio se llama
-   `tu-usuario.github.io` (un sitio raíz, no de proyecto), usa `base: '/'`.
+### Props (atributos)
 
-2. **Sube el proyecto normalmente** con `git add`, `git commit` y `git push` (el código
-   fuente sí va al repositorio; solo la carpeta `dist/` no se sube a mano).
+| Atributo      | Descripción                                    | Ejemplo                    |
+|---------------|-------------------------------------------------|-----------------------------|
+| `sku`         | Identificador del producto                      | `ASN-001`                   |
+| `imagen`      | Ruta de la imagen                                | `assets/img/halcon9.svg`    |
+| `titulo`      | Nombre del producto                              | `Halcón 9`                  |
+| `descripcion` | Texto descriptivo corto                          | `Pistola semiautomática...` |
+| `categoria`   | Categoría, se muestra sobre el título            | `Pistolas`                  |
+| `precio`      | Valor en pesos colombianos, sin puntos           | `4850000`                   |
+| `etiqueta`    | (Opcional) insignia sobre la imagen              | `Nuevo`                     |
 
-3. **Publica con un solo comando:**
+### Eventos
 
-   ```bash
-   npm run deploy
-   ```
+| Evento            | Se emite cuando...             | `detail`                                                      |
+|-------------------|---------------------------------|-----------------------------------------------------------------|
+| `agregar-pedido`  | se pulsa *Añadir al pedido*     | `{ sku, titulo, precio }`                                        |
+| `ver-ficha`       | se pulsa *Ficha técnica*        | `{ sku, titulo, descripcion, imagen, categoria, precio }`        |
 
-   Este comando compila el proyecto (`predeploy`) y sube el contenido de `dist/` a una
-   rama llamada `gh-pages` (gracias al paquete `gh-pages`, ya incluido en `package.json`).
+### Uso
 
-4. **Activa Pages en GitHub:** en el repositorio, ve a *Settings → Pages*. En
-   *Build and deployment → Source* elige **Deploy from a branch**, y en *Branch*
-   selecciona **gh-pages** y la carpeta **/(root)**. Guarda.
+```html
+<script src="js/tarjeta-producto.js" defer></script>
 
-5. Espera uno o dos minutos y entra a `https://tu-usuario.github.io/armeria-sierra-norte/`
-   (con la diagonal final). Cada vez que cambies el código, vuelve a correr
-   `npm run deploy` para actualizar el sitio publicado.
+<tarjeta-producto
+  sku="ASN-001"
+  categoria="Pistolas"
+  imagen="assets/img/halcon9.svg"
+  titulo="Halcón 9"
+  etiqueta="Nuevo"
+  descripcion="Pistola semiautomática compacta de uso deportivo."
+  precio="4850000">
+</tarjeta-producto>
 
-> Si la página carga en blanco y la consola del navegador (F12) muestra errores 404 en
-> los archivos `.js` o `.css`, casi siempre es porque `base` en `vite.config.js` no
-> coincide con el nombre real del repositorio. Revísalo y vuelve a publicar.
-
-## El componente `TarjetaProducto`
-
-### Props
-
-| Prop          | Tipo     | Descripción                                   |
-|---------------|----------|-----------------------------------------------|
-| `imagen`      | string   | Ruta de la imagen del producto                |
-| `titulo`      | string   | Nombre del producto                           |
-| `descripcion` | string   | Texto descriptivo corto                       |
-| `precio`      | number   | Valor en pesos colombianos (COP)              |
-| `categoria`   | string   | Categoría que se muestra sobre el título      |
-| `etiqueta`    | string   | (Opcional) insignia sobre la imagen           |
-
-### Eventos (funciones recibidas del padre)
-
-| Prop          | Se dispara cuando...                   |
-|---------------|----------------------------------------|
-| `onAgregar`   | se pulsa *Añadir al pedido*            |
-| `onVerFicha`  | se pulsa *Ficha técnica*               |
-
-### Ejemplo de uso
-
-```jsx
-<TarjetaProducto
-  imagen={producto.imagen}
-  titulo={producto.titulo}
-  descripcion={producto.descripcion}
-  precio={producto.precio}
-  categoria={producto.categoria}
-  onAgregar={() => agregar(producto)}
-  onVerFicha={() => setFichaAbierta(producto)}
-/>
+<script>
+  document.addEventListener('agregar-pedido', (e) => console.log(e.detail));
+</script>
 ```
 
 ## Cumplimiento de los requisitos del taller
 
-- **3 o más props:** recibe 6 (`imagen`, `titulo`, `descripcion`, `precio`, `categoria`, `etiqueta`).
-- **1 o más eventos:** 2 (`onAgregar` y `onVerFicha`).
-- **Reutilizable:** se renderiza 6 veces desde el arreglo `PRODUCTOS`, con datos distintos.
-- **Responsivo:** rejilla de 3, 2 o 1 columnas según el ancho de pantalla.
+- **3 o más props:** recibe 7 atributos (`sku`, `imagen`, `titulo`, `descripcion`, `categoria`, `precio`, `etiqueta`).
+- **1 o más eventos:** emite 2 eventos personalizados (`agregar-pedido` y `ver-ficha`).
+- **Reutilizable:** se usa 6 veces en `index.html` con datos diferentes.
+- **Responsivo:** rejilla de 3, 2 o 1 columnas según el ancho, y diálogos adaptados a móvil.
 
 ## Tecnologías
 
-React 18, Vite 5, CSS3 (variables, grid, flexbox) y el elemento nativo `<dialog>`.
+HTML5, CSS3 (variables, grid, `backdrop-filter`), JavaScript ES6+ (Custom Elements, Shadow DOM, `<dialog>`). Sin frameworks ni herramientas de compilación.

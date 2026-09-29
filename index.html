@@ -1,14 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Armería Sierra Norte: catálogo ficticio de armería deportiva y de colección. Proyecto académico de Desarrollo de Aplicaciones Web." />
-    <title>Armería Sierra Norte</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/js/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Armería Sierra Norte: catálogo ficticio de armería deportiva y de colección. Proyecto académico de Desarrollo de Aplicaciones Web." />
+  <title>Armería Sierra Norte</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/tarjeta-producto.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__interior">
+      <a class="marca" href="#inicio" aria-label="Armería Sierra Norte, inicio">
+        <svg width="24" height="24" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true">
+          <circle cx="32" cy="32" r="16" /><circle cx="32" cy="32" r="3.5" fill="currentColor" stroke="none" />
+          <path d="M32 6v10M32 48v10M6 32h10M48 32h10" />
+        </svg>
+        <span>Sierra Norte</span>
+      </a>
+      <nav class="encabezado__enlaces" aria-label="Principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#servicio">Servicio</a>
+      </nav>
+      <button class="pedido-boton" id="btn-pedido" type="button" aria-label="Ir al pedido">
+        <span>Pedido</span>
+        <span class="pedido-boton__contador" id="contador">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <section class="hero">
+      <div>
+        <h1>Precisión con carácter.</h1>
+        <p>Armería deportiva y de colección. Piezas de acero y nogal, elegidas una por una para quienes valoran el oficio bien hecho.</p>
+        <a class="boton boton--primario boton--grande" href="#catalogo">Ver el catálogo</a>
+      </div>
+      <img class="hero__imagen" src="assets/img/hero.svg" alt="Rifle de cerrojo con mira telescópica" width="900" height="900" />
+    </section>
+
+    <section class="catalogo" id="catalogo">
+      <div class="catalogo__interior">
+        <div class="catalogo__cabecera">
+          <div>
+            <h2 class="seccion__titulo">Catálogo</h2>
+            <p class="seccion__texto" id="contador-piezas">6 piezas disponibles</p>
+          </div>
+          <div class="filtros" id="filtros" role="tablist" aria-label="Filtrar por categoría">
+            <button type="button" class="filtro filtro--activo" role="tab" aria-selected="true" data-categoria="Todos">Todos</button>
+            <button type="button" class="filtro" role="tab" aria-selected="false" data-categoria="Pistolas">Pistolas</button>
+            <button type="button" class="filtro" role="tab" aria-selected="false" data-categoria="Rifles">Rifles</button>
+            <button type="button" class="filtro" role="tab" aria-selected="false" data-categoria="Accesorios">Accesorios</button>
+          </div>
+        </div>
+
+        <!-- Mismo componente, seis veces, con datos distintos -->
+        <div class="rejilla" id="rejilla">
+          <tarjeta-producto
+            sku="ASN-001" categoria="Pistolas" imagen="assets/img/halcon9.svg"
+            titulo="Halcón 9" etiqueta="Nuevo"
+            descripcion="Pistola semiautomática compacta de uso deportivo, con empuñadura texturizada y acabado pavonado mate."
+            precio="4850000">
+          </tarjeta-producto>
+
+          <tarjeta-producto
+            sku="ASN-002" categoria="Pistolas" imagen="assets/img/mesa38.svg"
+            titulo="Mesa 38" etiqueta="Colección"
+            descripcion="Revólver de acero de línea clásica con cachas de nogal. Pieza pensada para coleccionistas."
+            precio="3900000">
+          </tarjeta-producto>
+
+          <tarjeta-producto
+            sku="ASN-003" categoria="Rifles" imagen="assets/img/sierra.svg"
+            titulo="Sierra"
+            descripcion="Rifle de cerrojo con culata de nogal y mira telescópica incluida. Balance estable para precisión a distancia."
+            precio="7200000">
+          </tarjeta-producto>
+
+          <tarjeta-producto
+            sku="ASN-004" categoria="Rifles" imagen="assets/img/ribera.svg"
+            titulo="Ribera"
+            descripcion="Escopeta de corredera de uso versátil, con guardamano acanalado y cañón de acero endurecido."
+            precio="5400000">
+          </tarjeta-producto>
+
+          <tarjeta-producto
+            sku="ASN-005" categoria="Accesorios" imagen="assets/img/bruma.svg"
+            titulo="Bruma" etiqueta="Más vendido"
+            descripcion="Cuchillo de campo de hoja fija, con mango de nogal y remaches de latón. Ideal para acampar y senderismo."
+            precio="380000">
+          </tarjeta-producto>
+
+          <tarjeta-producto
+            sku="ASN-006" categoria="Accesorios" imagen="assets/img/estuche.svg"
+            titulo="Estuche rígido"
+            descripcion="Estuche de transporte con cierres de latón e interior acolchado, para guardar y trasladar el equipo con seguridad."
+            precio="520000">
+          </tarjeta-producto>
+        </div>
+      </div>
+    </section>
+
+    <section class="pedido" id="pedido">
+      <div class="pedido__interior">
+        <h2 class="seccion__titulo">Tu pedido</h2>
+        <p class="pedido__vacio" id="pedido-vacio">Aún no has añadido productos. Elige alguno del catálogo.</p>
+        <ul class="pedido__lista" id="pedido-lista"></ul>
+        <div class="pedido__resumen" id="pedido-resumen" hidden>
+          <p class="pedido__total"><span>Total</span><strong id="pedido-total">$ 0</strong></p>
+          <button type="button" class="boton boton--texto" id="btn-vaciar">Vaciar pedido</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="servicio" id="servicio">
+      <h2 class="seccion__titulo">Compra responsable</h2>
+      <p class="seccion__texto">Toda adquisición exige documentación y permisos vigentes según la normativa colombiana. Este sitio es un proyecto académico ficticio: no se realizan ventas reales.</p>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p>Proyecto académico del primer parcial de Desarrollo de Aplicaciones Web y Sistemas Operativos, Universidad Francisco de Paula Santander Ocaña.</p>
+  </footer>
+
+  <!-- Ficha técnica -->
+  <dialog class="ficha" id="dlg-ficha" aria-labelledby="ficha-titulo">
+    <button class="ficha__cerrar" type="button" data-cerrar aria-label="Cerrar la ficha">✕</button>
+    <img class="ficha__imagen" id="ficha-imagen" alt="" />
+    <div class="ficha__contenido">
+      <p class="seccion__texto" id="ficha-categoria" style="margin-top:0;color:var(--laton);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;"></p>
+      <h2 id="ficha-titulo"></h2>
+      <p class="ficha__texto" id="ficha-descripcion"></p>
+      <p class="ficha__precio" id="ficha-precio"></p>
+      <button class="boton boton--primario" type="button" id="ficha-agregar">Añadir al pedido</button>
+    </div>
+  </dialog>
+
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+</body>
 </html>
